@@ -27,8 +27,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/Adebesin-Cell/product-card)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/Adebesin-Cell/product-card](https://github.com/Adebesin-Cell/product-card)
+- Live Site URL: [https://parfum-product-card.netlify.app/](https://parfum-product-card.netlify.app/)
 
 ## My process
 
