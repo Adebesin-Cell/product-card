@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100;0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,100;1,9..144,200;1,9..144,300;1,9..144,400;1,9..144,500;1,9..144,600;1,9..144,700;1,9..144,800;1,9..144,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --Fraunces: "Fraunces", serif;
+  --Montserrat: "Montserrat", sans-serif;
+  --unit: 10px;
+  --size-xs: 12px;
+  --size-s: 14px;
+  --size-m: 16px;
+  --size-l: 24px;
+  --size-xl: 32px;
+  --size-2xl: 48px;
+  --span-xs: var(--unit);
+  --span-s: calc(var(--unit) * 2);
+  --span-m: calc(var(--unit) * 3);
+  --span-l: calc(var(--unit) * 4);
+  --span-xl: calc(var(--unit) * 5);
+  --span-2xl: calc(var(--unit) * 6);
+  --weight-xsm: 300;
+  --weight-sm: 400;
+  --weight-md: 500;
+  --weight-lg: 600;
+  --weight-xlg: 700;
+  --weight-xxlg: 800;
+  --weight-2xxlg: 900;
+  --dark-cyan: hsl(158, 36%, 37%);
+  --cream: hsl(30, 38%, 92%);
+  --very-dark-blue: hsl(212, 21%, 14%);
+  --dark-grayish-blue: hsl(228, 12%, 48%);
+  --white: hsl(0, 0%, 100%);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--Fraunces);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--cream);
+}
+@media only screen and (max-width: 600px) {
+  body {
+    padding: var(--span-m) var(--span-s);
+  }
+}
+
+.card {
+  border-radius: 10px;
+  background: var(--white);
+  display: flex;
+  max-width: 550px;
+  overflow: hidden;
+  height: 430px;
+}
+@media only screen and (max-width: 600px) {
+  .card {
+    flex-direction: column;
+    height: initial;
+  }
+}
+.card__image--box {
+  flex-basis: 250px;
+}
+@media only screen and (max-width: 600px) {
+  .card__image--box {
+    width: 100%;
+    flex-basis: 100%;
+    height: 200px;
+  }
+}
+.card__image {
+  display: block;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.card__image--desktop {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+@media only screen and (max-width: 600px) {
+  .card__image--desktop {
+    display: none;
+  }
+}
+.card__image--mobile {
+  width: 100%;
+  display: none;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+@media only screen and (max-width: 600px) {
+  .card__image--mobile {
+    display: block;
+  }
+}
+.card__details {
+  max-height: 100%;
+  padding: calc(var(--span-s) + 4px);
+  display: flex;
+  flex-direction: column;
+}
+.card__title {
+  text-transform: uppercase;
+  font-family: var(--Montserrat);
+  font-style: normal;
+  font-weight: var(--weight-md);
+  font-size: calc(var(--size-xs) - 2px);
+  line-height: 15px;
+  color: var(--dark-grayish-blue);
+  letter-spacing: 5px;
+}
+.card__heading {
+  margin-top: var(--span-s);
+  font-family: var(--Fraunces);
+  font-style: normal;
+  font-weight: var(--weight-xlg);
+  font-size: calc(var(--size-l) + 3px);
+  line-height: 32px;
+  color: var(--very-dark-blue);
+  letter-spacing: -1px;
+}
+@media only screen and (max-width: 600px) {
+  .card__heading--desktop {
+    display: none;
+  }
+}
+.card__heading--mobile {
+  display: none;
+}
+@media only screen and (max-width: 600px) {
+  .card__heading--mobile {
+    display: block;
+  }
+}
+.card__heading span {
+  display: block;
+}
+.card__paragraph {
+  margin-top: var(--span-s);
+  font-family: var(--Montserrat);
+  font-style: normal;
+  font-weight: var(--weight-xlg);
+  font-size: calc(var(--size-s) - 1px);
+  line-height: 19px;
+  color: var(--dark-grayish-blue);
+  padding-right: var(--span-m);
+}
+.card__price {
+  margin-top: var(--span-m);
+  display: flex;
+  gap: var(--span-m);
+  align-items: center;
+}
+.card__price--current {
+  font-family: var(--Fraunces);
+  font-style: normal;
+  font-weight: var(--weight-xlg);
+  font-size: calc(var(--size-l) + 3px);
+  line-height: 32px;
+  color: var(--dark-cyan);
+}
+.card__price--previous {
+  text-decoration: line-through;
+  font-family: var(--Fraunces);
+  font-style: normal;
+  font-weight: var(--weight-md);
+  font-size: calc(var(--size-xs));
+  line-height: 15px;
+  color: var(--dark-grayish-blue);
+}
+.card__button {
+  background: none;
+  outline: none;
+  margin-top: var(--span-s);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: calc(var(--span-xs) + 2px) var(--span-m);
+  text-align: center;
+  background: var(--dark-cyan);
+  border: 1px solid var(--dark-cyan);
+  border-radius: 5px;
+  gap: var(--span-xs);
+}
+.card__button .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card__button .icon svg {
+  width: 16px;
+  height: 16px;
+}
+.card__button .text {
+  font-family: var(--Montserrat);
+  font-style: normal;
+  font-weight: var(--weight-xlg);
+  font-size: calc(var(--size-s));
+  line-height: 19px;
+  color: var(--white);
+}/*# sourceMappingURL=styles.css.map */
